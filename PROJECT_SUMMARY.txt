@@ -1,39 +1,48 @@
 # PROJECT SUMMARY: SV Satellite Platform
 
-## Overview
-The SV Satellite Platform is a dual-app ecosystem designed to streamline the operations of an Internet Service Provider or Satellite TV provider. It bridges the gap between customer service requests and administrative management.
+## 🌟 Overview
+The SV Satellite Platform is a professional-grade, dual-app ecosystem designed to streamline the operations of an Internet Service Provider (ISP) or Satellite TV provider. It bridges the gap between customer service requests and administrative management with a modern, cloud-based architecture.
 
-## Key Components
+## 🛠 Technology Stack
+This project utilizes a high-performance, modern technology stack for maximum reliability and scalability:
+
+### **Programming Languages**
+- **JavaScript (ES6+)**: Used for the entire core application logic, state management, and interaction flows.
+- **JSON**: Used for metadata, app configurations, and project manifests.
+- **Markdown**: Used for comprehensive technical and project documentation.
+
+### **Core Resources & Frameworks**
+- **Expo & React Native**: Powering both the Customer and Admin apps as cross-platform mobile applications.
+- **Google Firebase**:
+    - **Authentication**: Provides secure, multi-method login (Phone/Email).
+    - **Cloud Firestore**: A real-time NoSQL database ensuring data consistency across all devices.
+- **OneSignal**: Enterprise-level push notification service for real-time alerts and user engagement.
+- **EAS (Expo Application Services)**: Utilized for automated cloud-based building, signing, and Play Store submission pipelines.
+
+## 📱 Application Modules
 
 ### 1. Customer Application (DishCustomerApp)
-Goal: Empower customers to self-manage their accounts.
-- Registration & Profile Management: Users can register with their mobile numbers and village information.
-- Subscription Tracking: View details of active plans and remaining days.
-- Plans Discovery: Browse available service packages.
-- Support Tickets: Submit and track service issues directly from the app.
-- Multi-language Support: Available in multiple local languages.
+*Goal: Empowerment through self-service.*
+- **Registration**: Streamlined onboarding with mobile verification and location profiling.
+- **Subscription Tracking**: Real-time view of active plans, speeds, and "Days Remaining."
+- **Plans Discovery**: Exploration of tiered service packages and add-ons.
+- **Support Tickets**: Integrated issue reporting with image attachment capabilities.
+- **Multi-language Support**: Fully localized to serve a diverse user base.
 
 ### 2. Administrator Application (DishAdminApp)
-Goal: Centralized control for service providers.
-- User Approval: Review and approve new customer registrations.
-- Subscription Management: Activate, renew, or modify customer subscriptions.
-- Real-time Notifications: Admins receive instant push notifications for new requests via OneSignal.
-- Analytics: Overview of active users and pending approvals.
+*Goal: Total operational control.*
+- **User Approval**: Centralized queue to review and authorize new customer registrations.
+- **Billing Management**: Specialized **BCN Calculator** logic for prorated renewals and fixed-fee billing.
+- **Broadcast System**: Ability to send mass notifications to all users for maintenance or updates.
+- **Real-time Monitoring**: Instant alerts for new payments, user registrations, and support tickets.
 
-### 3. Backend (Firebase)
-- Authentication: Secure phone-based and email authentication.
-- Firestore: Real-time database for sync across all devices.
-- Security Rules: Hardened rules ensure customers can only access their own data, while admins have full visibility.
+## ⚙️ Business Logic & Flow
+1. **Onboarding**: A customer registers; the system places them in a "Pending Verification" state.
+2. **Authorization**: Admins receive a OneSignal notification and approve the profile after verifying details.
+3. **Service Lifecycle**: Customers manage their subscriptions, while Admins handle the billing renewals and support fulfillment.
+4. **Data Integrity**: Global security rules ensure data privacy between customers while giving owners a bird’s-eye view of the organization.
 
-## Business Flow
-1. A customer registers via the Customer App.
-2. The registration remains in a "Pending" state.
-3. The Admin receives a notification and reviews the customer details.
-4. Once the Admin approves, the Customer gains full access to the dashboard.
-5. The Admin manages plan renewals and service updates through the Admin portal.
-
-## Technical Excellence
-- Organized Monorepo: Both apps living in a single repository for easier maintenance.
-- Automated CI/CD: Ready-to-go build pipelines using EAS (Expo Application Services).
-- Design System: Consistent theming and UI components across both applications.
-- Maintenance Toolkit: Dedicated scripts for database cleanup and asset management.
+## 🏆 Project Highlights
+- **Consolidated Monorepo**: Both platforms live in a single repository for unified maintenance.
+- **Automated CI/CD**: Production-ready pipelines for immediate Play Store deployment.
+- **Resilient Architecture**: Built-in specialized utilities for image optimization, offline caching, and database maintenance.
