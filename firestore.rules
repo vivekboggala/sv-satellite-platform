@@ -1,0 +1,111 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ============================================
+    // VILLAGES - Anyone can read, admins can write
+    // ============================================
+    match /villages/{villageId} {
+      allow read: if true;
+      allow write: if true; // Open for now, lock down later
+    }
+
+    // ============================================
+    // USERS - Users can read/write own data
+    // ============================================
+    match /users/{userId} {
+      allow read: if true; // Anyone can read (for registration checks)
+      allow create: if true; // Anyone can create (for registration)
+      allow update: if true; // User or admin can update
+      allow delete: if true; // Admin only (open for now)
+    }
+
+    // ============================================
+    // ADMINS
+    // ============================================
+    match /admins/{adminId} {
+      allow read, write: if true;
+    }
+
+    // ============================================
+    // PAYMENTS
+    // ============================================
+    match /payments/{paymentId} {
+      allow read: if true;
+      allow create: if true; // Users can create payments
+      allow update: if true; // Admins approve
+      allow delete: if true;
+    }
+
+    // ============================================
+    // PLANS
+    // ============================================
+    match /plans/{planId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // ============================================
+    // SUPPORT TICKETS
+    // ============================================
+    match /support_tickets/{ticketId} {
+      allow read, write: if true;
+    }
+
+    // ============================================
+    // BOX CHANGE REQUESTS
+    // ============================================
+    match /box_change_requests/{requestId} {
+      allow read, write: if true;
+    }
+
+    // ============================================
+    // PASSWORD RESET REQUESTS
+    // ============================================
+    match /password_reset_requests/{requestId} {
+      allow read, write: if true;
+    }
+
+    // ============================================
+    // BROADCASTS
+    // ============================================
+    match /broadcasts/{broadcastId} {
+      allow read, write: if true;
+    }
+
+    // ============================================
+    // SETTINGS
+    // ============================================
+    match /settings/{settingId} {
+      allow read, write: if true;
+    }
+
+    // ============================================
+    // UTR INDEX (prevent duplicate payments)
+    // ============================================
+    match /utr_index/{utrId} {
+      allow read, write: if true;
+    }
+
+    // ============================================
+    // NOTIFICATIONS
+    // ============================================
+    match /notifications/{notifId} {
+      allow read, write: if true;
+    }
+
+    // ============================================
+    // ADMIN RESET REQUESTS
+    // ============================================
+    match /admin_reset_requests/{requestId} {
+      allow read, write: if true;
+    }
+
+    // ============================================
+    // CATCH ALL - Allow everything else for now
+    // ============================================
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}

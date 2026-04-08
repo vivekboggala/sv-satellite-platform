@@ -1,0 +1,39 @@
+# PROJECT SUMMARY: SV Satellite Platform
+
+## Overview
+The SV Satellite Platform is a dual-app ecosystem designed to streamline the operations of an Internet Service Provider or Satellite TV provider. It bridges the gap between customer service requests and administrative management.
+
+## Key Components
+
+### 1. Customer Application (DishCustomerApp)
+Goal: Empower customers to self-manage their accounts.
+- Registration & Profile Management: Users can register with their mobile numbers and village information.
+- Subscription Tracking: View details of active plans and remaining days.
+- Plans Discovery: Browse available service packages.
+- Support Tickets: Submit and track service issues directly from the app.
+- Multi-language Support: Available in multiple local languages.
+
+### 2. Administrator Application (DishAdminApp)
+Goal: Centralized control for service providers.
+- User Approval: Review and approve new customer registrations.
+- Subscription Management: Activate, renew, or modify customer subscriptions.
+- Real-time Notifications: Admins receive instant push notifications for new requests via OneSignal.
+- Analytics: Overview of active users and pending approvals.
+
+### 3. Backend (Firebase)
+- Authentication: Secure phone-based and email authentication.
+- Firestore: Real-time database for sync across all devices.
+- Security Rules: Hardened rules ensure customers can only access their own data, while admins have full visibility.
+
+## Business Flow
+1. A customer registers via the Customer App.
+2. The registration remains in a "Pending" state.
+3. The Admin receives a notification and reviews the customer details.
+4. Once the Admin approves, the Customer gains full access to the dashboard.
+5. The Admin manages plan renewals and service updates through the Admin portal.
+
+## Technical Excellence
+- Organized Monorepo: Both apps living in a single repository for easier maintenance.
+- Automated CI/CD: Ready-to-go build pipelines using EAS (Expo Application Services).
+- Design System: Consistent theming and UI components across both applications.
+- Maintenance Toolkit: Dedicated scripts for database cleanup and asset management.

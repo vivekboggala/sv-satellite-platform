@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "567697559635",
+    "project_id": "cable-fibre",
+    "storage_bucket": "cable-fibre.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:567697559635:android:0a2fbd069b27fbabf8f6a6",
+        "android_client_info": {
+          "package_name": "com.dish.admin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB66-yb3Po-_MGNW9mfMiSC4P6MHxABzDc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:567697559635:android:8dddba76083c89c8f8f6a6",
+        "android_client_info": {
+          "package_name": "com.dishcustomer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB66-yb3Po-_MGNW9mfMiSC4P6MHxABzDc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

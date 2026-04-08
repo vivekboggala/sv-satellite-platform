@@ -1,0 +1,50 @@
+# dependencies
+node_modules/
+*/node_modules/
+
+# Expo
+.expo/
+*/.expo/
+dist/
+*/dist/
+web-build/
+*/web-build/
+expo-env.d.ts
+*/expo-env.d.ts
+
+# Native
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+
+# generated native folders
+/ios
+/android
+DishCustomerApp/ios
+DishCustomerApp/android
+DishAdminApp/ios
+DishAdminApp/android
+
+# Metro
+.metro-health-check*
+*/.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+firebase-debug.log
+
+# macOS
+.DS_Store
+
+# local env files
+.env*.local
+*/.env*.local
+
+# typescript
+*.tsbuildinfo
+*/*.tsbuildinfo

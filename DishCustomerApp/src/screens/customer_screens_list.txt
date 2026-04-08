@@ -1,0 +1,17 @@
+BoxChangeRequestScreen.js
+ChatScreen.js
+ConfigureDurationScreen.js
+customer_screens_list.txt
+DashboardScreen.js
+LegalScreen.js
+LoginScreen.js
+NotificationPreferencesScreen.js
+NotificationsScreen.js
+PaymentHistoryScreen.js
+PaymentScreen.js
+PlansScreen.js
+ProfileScreen.js
+RegistrationScreen.js
+SettingsScreen.js
+SplashScreen.js
+SupportScreen.js
